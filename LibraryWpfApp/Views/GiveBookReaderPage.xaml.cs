@@ -54,7 +54,7 @@ namespace LibraryWpfApp.Views
         /// </summary>
         private void GiveBookButton_Click(object sender, RoutedEventArgs e)
         {
-            if(selectBook != null)
+            if(selectBook != null && ReturnDatePicker != null)
             {
                 Orders objectOrders = new Orders()
                 {
@@ -67,6 +67,10 @@ namespace LibraryWpfApp.Views
                 db.context.Orders.Add(objectOrders);
                 db.context.SaveChanges();
                 this.NavigationService.Navigate(new ViewingReadersPage());
+            }
+            else if (ReturnDatePicker == null)
+            {
+                MessageBox.Show("Выберите дату, когда читателю нужно вернуть книгу");
             }
             else
             {

@@ -10,12 +10,10 @@
                 <ResourceDictionary Source="Resources/Dictionarys/ButtonDictionary.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources/Dictionarys/TextBoxDictionary.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources/Dictionarys/ImageDictionary.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="Resources/Dictionarys/GridDictionary.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources/Dictionarys/BorderDictionary.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources/Dictionarys/EllipseDictionary.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources/Dictionarys/ScrollViewerDictionary.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources/Dictionarys/StackPanelDictionary.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="Resources/Dictionarys/ListViewDictionary.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
