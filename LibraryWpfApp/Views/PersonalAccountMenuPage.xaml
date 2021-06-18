@@ -1,0 +1,115 @@
+﻿<Page x:Class="LibraryWpfApp.Views.PersonalAccountMenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryWpfApp.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PersonalAccountMenuPage">
+    <Page.Resources>
+        <Style x:Key="WidthGrid">
+            <Setter Property="Grid.Width" Value="500"></Setter>
+        </Style>
+        <Style x:Key="SearchReaderListView" BasedOn="{StaticResource BackgroundColorWindow}">
+            <Setter Property="ListView.Width" Value="500"></Setter>
+        </Style>
+        <Style x:Key="ReaderInfoGrid" BasedOn="{StaticResource BackgroundColorWindow}">
+            <Setter Property="Grid.Width" Value="485"></Setter>
+        </Style>
+        <Style x:Key="RentedBookReaderListView" BasedOn="{StaticResource BackgroundColorWindow}">
+            <Setter Property="ListView.Width" Value="250"></Setter>
+        </Style>
+        <Style x:Key="RentedBookReaderGrid" BasedOn="{StaticResource BackgroundColorWindow}">
+            <Setter Property="Grid.Width" Value="235"></Setter>
+        </Style>
+    </Page.Resources>
+    
+    <Grid Style="{StaticResource BackgroundColorWindow}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Border x:Name="RentedBooksReaderBorder" Style="{StaticResource FullyRoundedBorder}">
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="PreviewReaders" Orientation="Vertical" Style="{StaticResource PreviewBookStackPanel}">
+                    <TextBlock>Книги в прокате</TextBlock>
+                    <ListView x:Name="RentedBooksReaderListView" Style="{StaticResource RentedBookReaderListView}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Style="{StaticResource RentedBookReaderGrid}" HorizontalAlignment="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock>Название книги:</TextBlock>
+                                        <TextBlock Text="{Binding Books.name}"></TextBlock>
+                                        <TextBlock>ISBN:</TextBlock>
+                                        <TextBlock Text="{Binding Books.cipher_ISBN}"></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock>Дата начала аренды книги:</TextBlock>
+                                        <TextBlock Text="{Binding issue_date, StringFormat={}{0:dd MMM yyyy}}"></TextBlock>
+                                        <TextBlock>Дата конца аренды книги:</TextBlock>
+                                        <TextBlock Text="{Binding return_date, StringFormat={}{0:dd MMM yyyy}}"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <Border x:Name="CompleteRentedBooksReaderBorder" Grid.Column="1" Style="{StaticResource FullyRoundedBorder}">
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical" Style="{StaticResource PreviewBookStackPanel}">
+                    <TextBlock>История проката</TextBlock>
+                    <ListView x:Name="CompleteRentedBooksReaderListView" Style="{StaticResource RentedBookReaderListView}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Style="{StaticResource RentedBookReaderGrid}" HorizontalAlignment="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock>Название книги:</TextBlock>
+                                        <TextBlock Text="{Binding Books.name}"></TextBlock>
+                                        <TextBlock>ISBN:</TextBlock>
+                                        <TextBlock Text="{Binding Books.cipher_ISBN}"></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock>Дата начала аренды книги:</TextBlock>
+                                        <TextBlock Text="{Binding issue_date, StringFormat={}{0:dd MMM yyyy}}"></TextBlock>
+                                        <TextBlock>Дата конца аренды книги:</TextBlock>
+                                        <TextBlock Text="{Binding return_date, StringFormat={}{0:dd MMM yyyy}}"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <Border x:Name="InfoUserBorder" Grid.Column="2" Style="{StaticResource FullyRoundedBorder}">
+            <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                <TextBlock x:Name="NameUserTextBlock" Text="{Binding name}"></TextBlock>
+                <TextBlock x:Name="SurameUserTextBlock" Text="{Binding surname}"></TextBlock>
+                <TextBlock x:Name="PatronymicUserTextBlock" Text="{Binding patronymic}"></TextBlock>
+                <TextBlock x:Name="CodeLibraryCardUserTextBlock" Text="{Binding code_library_card}"></TextBlock>
+                <TextBlock x:Name="BirthDateUserTextBlock" Text="{Binding birth_date, StringFormat={}{0:dd MMM yyyy}}"></TextBlock>
+                <Button x:Name="EditPassUserDataButton" Click="EditPassUserDataButton_Click">Изменить пароль</Button>
+                <Button x:Name="EditEmailUserDataButton" Click="EditEmailUserDataButton_Click">Изменить логин</Button>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Page>

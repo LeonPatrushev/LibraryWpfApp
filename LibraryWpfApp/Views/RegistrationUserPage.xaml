@@ -1,0 +1,37 @@
+﻿<Page x:Class="LibraryWpfApp.Views.RegistrationUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryWpfApp.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationUserPage">
+
+    <Grid Style="{StaticResource BackgroundColorWindow}" >
+        <Border Style="{StaticResource SlimFullyRoundedBorder}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="1" VerticalAlignment="Center">
+
+                    <TextBlock x:Name="EmailTextBlock" HorizontalAlignment="Center">Введите электронную почту пользователя</TextBlock>
+                    <TextBox x:Name="EmailTextBox"></TextBox>
+
+                    <TextBlock x:Name="TypeUserTextBlock" HorizontalAlignment="Center">Выберите тип доступа пользователя</TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <RadioButton x:Name="LibrarianRadioButton">Библиотекарь</RadioButton>
+                        <RadioButton x:Name="AdminRadioButton">Администратор</RadioButton>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <Button x:Name="CreatingUserButton" Grid.Row="2" Click="CreatingUserButton_Click">Создать</Button>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

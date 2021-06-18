@@ -1,0 +1,70 @@
+﻿<Page x:Class="LibraryWpfApp.Views.EditReadersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryWpfApp.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditreadersPage">
+
+    <Grid Style="{StaticResource BackgroundColorWindow}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="0.6*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="1" Style="{StaticResource FullyRoundedBorder}">
+            <StackPanel>
+
+                <TextBlock x:Name="NameTextBlock">Имя</TextBlock>
+                <TextBox x:Name="NameTextBox" Text="{Binding name}"></TextBox>
+                <TextBlock x:Name="SurnameTextBlock">Фамилия</TextBlock>
+                <TextBox x:Name="SurnameTextBox" Text="{Binding surname}"></TextBox>
+                <TextBlock x:Name="PatronymicTextBlock">Отчество</TextBlock>
+                <TextBox x:Name="PatronymicTextBox" Text="{Binding patronymic}"></TextBox>
+                <TextBlock x:Name="BirthDateTextBlock">Дата родения</TextBlock>
+                <DatePicker x:Name="BirthDatePicker" SelectedDate="{Binding birth_date}"></DatePicker>
+
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource FullyRoundedBorder}">
+            <StackPanel>
+
+                <TextBlock x:Name="AddresTextBlock">Адрес проживания</TextBlock>
+                <TextBox x:Name="AddresTextBox" Text="{Binding addres}"></TextBox>
+                <TextBlock x:Name="PlaceWorkTextBlock">Место работы/учебы</TextBlock>
+                <TextBox x:Name="PlaceWorkTextBox" Text="{Binding place_of_work}"></TextBox>
+                <TextBlock x:Name="TelephoneTextBlock">Номер телефона</TextBlock>
+                <TextBox x:Name="TelephoneTextBox" Text="{Binding telephone}"></TextBox>
+                <TextBlock x:Name="TypeReadersTicketTextBlock">Тип читательского билета</TextBlock>
+                <ComboBox x:Name="TypeReadersTicketComboBox">
+                    <ComboBoxItem Tag="А">Только абонемент</ComboBoxItem>
+                    <ComboBoxItem Tag="Ч">Только читательный зал</ComboBoxItem>
+                    <ComboBoxItem Tag="О">Общий(читательный зал и абонемент)</ComboBoxItem>
+                </ComboBox>
+
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.ColumnSpan ="2" Style="{StaticResource FullyRoundedBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="DelReadersTicketButton" Click="DelReadersTicketButton_Click">Удалить читателя</Button>
+                <Button x:Name="EditReadersTicketButton" Grid.Column="1" Click="EditReadersTicketButton_Click">Сохранить изменения</Button>
+            </Grid>
+        </Border>
+        
+    </Grid>
+</Page>

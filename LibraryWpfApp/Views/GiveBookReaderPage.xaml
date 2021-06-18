@@ -1,0 +1,67 @@
+﻿<Page x:Class="LibraryWpfApp.Views.GiveBookReaderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryWpfApp.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GiveBookReaderPage">
+
+    <Grid Style="{StaticResource BackgroundColorWindow}">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Border x:Name="SelectBookBorder" Grid.Column="0" Style="{StaticResource FullyRoundedBorder}">
+            
+            <StackPanel>
+
+                <Grid>
+                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBox x:Name="SearchTextBox" Style="{StaticResource SerchTextBox}"></TextBox>
+                        <Button x:Name="SearchButton" Style="{StaticResource SearchButton}">Поиск</Button>
+                    </StackPanel>
+
+                </Grid>
+
+                <ListView x:Name="SearchBookListView" Style="{StaticResource BackgroundColorWindow}" Width="500">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid x:Name="BookInfoGrid" MouseLeftButtonDown="BookInfoGrid_MouseLeftButtonDown" Style="{StaticResource BackgroundColorWindow}" Width="485" HorizontalAlignment="Center">
+                                <TextBlock x:Name="BookNameTextBlock" Text="{Binding name}" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+            
+        </Border>
+
+        <Border Grid.Column="1" Style="{StaticResource FullyRoundedBorder}">
+            
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center">Дата выдачи книги</TextBlock>
+                    <TextBlock x:Name="IssueDateTextBlock" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock HorizontalAlignment="Center">Дата возврата книги</TextBlock>
+                    <DatePicker x:Name="ReturnDatePicker"></DatePicker>
+                </StackPanel>
+                
+                <Button x:Name="GiveBookButton" Grid.Row="1" Click="GiveBookButton_Click">Выдать книгу</Button>
+                
+            </Grid>
+            
+        </Border>
+        
+    </Grid>
+</Page>

@@ -1,0 +1,57 @@
+﻿<Window x:Class="LibraryWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryWpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280" WindowStyle="None" BorderThickness="0" Visibility="Visible" Closed="Window_Closed">
+    <Window.Resources>
+        <Style x:Key="ToolBarStackPanel">
+            <Setter Property="StackPanel.Margin" Value="15 10 15 10"></Setter>
+        </Style>
+        <Style x:Key="BackgroundColorAndMargin" BasedOn="{StaticResource BackgroundColor}">
+            <Setter Property="Grid.Margin" Value="15 10 15 10"></Setter>
+        </Style>
+        <Style x:Key="BackgroundColorAndWidth" BasedOn="{StaticResource BackgroundColor}">
+            <Setter Property="Grid.Width" Value="600"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Style="{StaticResource BackgroundColorWindow}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.08*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="ToolBarGrid" Grid.Row="0" Style="{StaticResource BackgroundColorWindow}" MouseLeftButtonDown="ToolBarGrid_MouseLeftButtonDown">
+
+            <StackPanel Orientation="Horizontal" Style="{StaticResource ToolBarStackPanel}">
+                
+                <Ellipse x:Name="ExitEllipse" Style = "{StaticResource EllipseExitStyle}" Margin="0"  MouseLeftButtonDown="ExitEllipse_MouseLeftButtonDown"></Ellipse>
+                <Ellipse x:Name="RollUpEllipse" Style = "{StaticResource EllipseRollUpStyle}" MouseLeftButtonDown="RollUpEllipse_MouseLeftButtonDown"></Ellipse>
+                <Ellipse x:Name="FullscreenEllipse" Style = "{StaticResource EllipseFullscreenStyle}" MouseLeftButtonDown="FullscreenEllipse_MouseLeftButtonDown"></Ellipse>
+                
+            </StackPanel>
+            
+        </Grid>
+
+        <Grid x:Name="HeaderGrid" Grid.Row="1" Style="{StaticResource BackgroundColorAndMargin}">
+
+            <Image x:Name="LoginImage" Source="Resources/Image/Interface/Login.png" MouseLeftButtonDown="LoginImage_MouseLeftButtonDown" Style="{StaticResource Login}"></Image>
+            <Image x:Name="LogoutImage" Source="Resources/Image/Interface/Logout.png" MouseLeftButtonDown="LogoutImage_MouseLeftButtonDown" Style="{StaticResource Login}"></Image>
+            <Grid x:Name="MenuPanelGrid" Width="600" MouseLeave="MenuPanelGrid_MouseLeave" Style="{StaticResource BackgroundColorAndWidth}"></Grid>
+            <Button x:Name="PersonalAccountButton" Click="PersonalAccountButton_Click" Style="{StaticResource PersonalAccountButton}">Личный кабинет</Button>
+            <Button x:Name="MainMenuButton" Click="MainMenuButton_Click" Style="{StaticResource MainMenuButton}">Главное меню</Button>
+            <Image x:Name="LogoImage" Source="Resources/Image/Logo/LogolibraryV2.png" MouseLeftButtonDown="LogoImage_MouseLeftButtonDown" Style="{StaticResource Logo}"></Image>
+            <Image x:Name="BackArrowImage" Source="Resources/Image/Interface/Backarrow.png" Style="{StaticResource BackArrow}" MouseLeftButtonDown="BackArrowImage_MouseLeftButtonDown"></Image>
+           
+        </Grid>
+
+        <Frame x:Name="MainFrame" Grid.Row="2" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" Style="{StaticResource BackgroundColorAndMargin}">
+
+        </Frame>
+
+    </Grid>
+</Window>

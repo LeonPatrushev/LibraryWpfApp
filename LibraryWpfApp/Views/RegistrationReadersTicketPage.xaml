@@ -1,0 +1,64 @@
+﻿<Page x:Class="LibraryWpfApp.Views.RegistrationReadersTicketPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryWpfApp.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationReadersTicketPage">
+
+    <Grid Style="{StaticResource BackgroundColorWindow}">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="0.6*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="1" Style="{StaticResource FullyRoundedBorder}">
+            <StackPanel>
+
+                <TextBlock x:Name="NameTextBlock">Имя</TextBlock>
+                <TextBox x:Name="NameTextBox"></TextBox>
+                <TextBlock x:Name="SurnameTextBlock">Фамилия</TextBlock>
+                <TextBox x:Name="SurnameTextBox"></TextBox>
+                <TextBlock x:Name="PatronymicTextBlock">Отчество</TextBlock>
+                <TextBox x:Name="PatronymicTextBox"></TextBox>
+                <TextBlock x:Name="BirthDateTextBlock">Дата родения</TextBlock>
+                <DatePicker x:Name="BirthDatePicker"></DatePicker>
+
+            </StackPanel>
+        </Border>
+
+
+        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource FullyRoundedBorder}">
+            <StackPanel >
+
+                <TextBlock x:Name="AddresTextBlock">Адрес проживания</TextBlock>
+                <TextBox x:Name="AddresTextBox"></TextBox>
+                <TextBlock x:Name="PlaceWorkTextBlock">Место работы/учебы</TextBlock>
+                <TextBox x:Name="PlaceWorkTextBox"></TextBox>
+                <TextBlock x:Name="TelephoneTextBlock">Номер телефона</TextBlock>
+                <TextBox x:Name="TelephoneTextBox"></TextBox>
+                <TextBlock x:Name="TypeReadersTicketTextBlock">Тип читательского билета</TextBlock>
+                <ComboBox x:Name="TypeReadersTicketComboBox">
+                    <ComboBoxItem>Только абонемент</ComboBoxItem>
+                    <ComboBoxItem>Только читательный зал</ComboBoxItem>
+                    <ComboBoxItem>Общий(читательный зал и абонемент)</ComboBoxItem>
+                </ComboBox>
+
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource FullyRoundedBorder}">
+            <Button x:Name="CreatingReadersTicketButton"  Click="CreatingReadersTicketButton_Click">Создать</Button>
+        </Border>
+        
+    </Grid>
+</Page>

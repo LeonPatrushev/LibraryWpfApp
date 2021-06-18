@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1e1f43277b254b4283af03a583c91326" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="LibraryDataBaseModel.Bookbinding" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LibraryDataBaseModel.Books" Width="1.5" PointX="3" PointY="2.25" />
+        <EntityTypeShape EntityType="LibraryDataBaseModel.Completed_orders" Width="1.5" PointX="5.25" PointY="3.375" />
+        <EntityTypeShape EntityType="LibraryDataBaseModel.Library_card" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="LibraryDataBaseModel.Orders" Width="1.5" PointX="8.25" PointY="3.375" />
+        <EntityTypeShape EntityType="LibraryDataBaseModel.Roles" Width="1.5" PointX="3" PointY="12.75" />
+        <EntityTypeShape EntityType="LibraryDataBaseModel.Status_book" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LibraryDataBaseModel.Users" Width="1.5" PointX="5.25" PointY="8" />
+        <AssociationConnector Association="LibraryDataBaseModel.FK_Books_Bookbinding" />
+        <AssociationConnector Association="LibraryDataBaseModel.FK_Books_Status_book" />
+        <AssociationConnector Association="LibraryDataBaseModel.FK_Completed_orders_Books" />
+        <AssociationConnector Association="LibraryDataBaseModel.FK_Orders_Books" />
+        <AssociationConnector Association="LibraryDataBaseModel.FK_Completed_orders_Library_card" />
+        <AssociationConnector Association="LibraryDataBaseModel.FK_Orders_Library_card" />
+        <AssociationConnector Association="LibraryDataBaseModel.FK_Users_Library_card" />
+        <AssociationConnector Association="LibraryDataBaseModel.FK_Users_Roles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
