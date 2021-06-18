@@ -11,7 +11,7 @@
     <Page.Resources>
         
         <Style x:Key="RealSearchBookListView" BasedOn="{StaticResource BackgroundColor}">
-            <Setter Property="ListView.Width" Value="500"></Setter>
+            <Setter Property="ListView.Width" Value="520"></Setter>
             <Setter Property="ListView.Height" Value="350"></Setter>
             <Setter Property="ListView.BorderThickness" Value="0"></Setter>
         </Style>
@@ -21,7 +21,7 @@
             <Setter Property="Border.CornerRadius" Value="10"></Setter>
             <Setter Property="Border.BorderThickness" Value="2"></Setter>
             <Setter Property="Border.BorderBrush" Value="#1ea54c"></Setter>
-            <Setter Property="Border.Width" Value="478"></Setter>
+            <Setter Property="Border.Width" Value="470"></Setter>
             <Setter Property="Border.Height" Value="50"></Setter>
         </Style>
         
