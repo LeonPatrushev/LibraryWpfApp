@@ -23,6 +23,10 @@
         <Style x:Key="RentedBookReaderGrid" BasedOn="{StaticResource BackgroundColorWindow}">
             <Setter Property="Grid.Width" Value="235"></Setter>
         </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource ContrastingGreenColor}"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
     </Page.Resources>
     
     <Grid Style="{StaticResource BackgroundColorWindow}">
@@ -100,9 +104,9 @@
         </Border>
 
         <Border x:Name="InfoUserBorder" Grid.Column="2" Style="{StaticResource FullyRoundedBorder}">
-            <StackPanel Grid.Column="2" HorizontalAlignment="Center">
-                <TextBlock x:Name="NameUserTextBlock" Text="{Binding name}"></TextBlock>
+            <StackPanel Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource ClassicMarginStackPanel}">
                 <TextBlock x:Name="SurameUserTextBlock" Text="{Binding surname}"></TextBlock>
+                <TextBlock x:Name="NameUserTextBlock" Text="{Binding name}"></TextBlock>
                 <TextBlock x:Name="PatronymicUserTextBlock" Text="{Binding patronymic}"></TextBlock>
                 <TextBlock x:Name="CodeLibraryCardUserTextBlock" Text="{Binding code_library_card}"></TextBlock>
                 <TextBlock x:Name="BirthDateUserTextBlock" Text="{Binding birth_date, StringFormat={}{0:dd MMM yyyy}}"></TextBlock>

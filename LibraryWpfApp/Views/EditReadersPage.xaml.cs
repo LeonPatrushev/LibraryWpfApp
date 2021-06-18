@@ -65,6 +65,7 @@ namespace LibraryWpfApp.Views
             LibraryCardController objectLibraryCardController = new LibraryCardController();
             db.context.Library_card.Where(x =>x.id_library_card == idLibraryCard).First().code_library_card = objectLibraryCardController.ChangeCodeReadersTicket(TypeReadersTicketComboBox.Text, codeLibraryCard);
             db.context.SaveChanges();
+            this.NavigationService.Navigate(new ViewingReadersPage());
         }
 
         /// <summary>
@@ -97,6 +98,7 @@ namespace LibraryWpfApp.Views
                 db.context.Users.Remove(objectUsers);
                 db.context.Library_card.Remove(objectLibrary_Card);
                 db.context.SaveChanges();
+                this.NavigationService.Navigate(new ViewingReadersPage());
             }
         }
     }

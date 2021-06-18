@@ -14,6 +14,7 @@
             <Setter Property="ListView.Width" Value="520"></Setter>
             <Setter Property="ListView.Height" Value="350"></Setter>
             <Setter Property="ListView.BorderThickness" Value="0"></Setter>
+            <Setter Property="ListView.Foreground" Value="{StaticResource ContrastingGreenColor}"></Setter>
         </Style>
 
         <Style x:Key="RealElementListViewBorder">
@@ -27,6 +28,11 @@
         
         <Style x:Key="RealElementListViewGrid" BasedOn="{StaticResource BackgroundColorWindow}">
             <Setter Property="Grid.Margin" Value="5"></Setter>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource ContrastingGreenColor}"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
         </Style>
         
     </Page.Resources>

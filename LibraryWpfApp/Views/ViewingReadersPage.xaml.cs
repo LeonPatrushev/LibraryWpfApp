@@ -132,6 +132,7 @@ namespace LibraryWpfApp.Views
                     db.context.Completed_orders.Add(objectCompletedOrders);
                     db.context.Books.Where(x => x.id_book == selectOrder.id_book).First().id_status = 1;
                     db.context.SaveChanges();
+                    this.NavigationService.Navigate(new ViewingReadersPage());
                 }
             }
         }

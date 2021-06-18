@@ -13,6 +13,7 @@
             <Setter Property="ListView.Width" Value="520"></Setter>
             <Setter Property="ListView.Height" Value="350"></Setter>
             <Setter Property="ListView.BorderThickness" Value="0"></Setter>
+            <Setter Property="ListView.Foreground" Value="{StaticResource ContrastingGreenColor}"></Setter>
         </Style>
 
         <Style x:Key="RealReaderElementListViewBorder">
@@ -30,12 +31,14 @@
 
         <Style x:Key="RealReaderElementListViewTextBlock">
             <Setter Property="TextBlock.Margin" Value="0 0 5 0"></Setter>
+            <Setter Property="TextBlock.Foreground" Value="{StaticResource ContrastingGreenColor}"></Setter>
         </Style>
-        
+
         <Style x:Key="RealSearchBookListView" BasedOn="{StaticResource BackgroundColor}">
             <Setter Property="ListView.Width" Value="350"></Setter>
             <Setter Property="ListView.Height" Value="430"></Setter>
             <Setter Property="ListView.BorderThickness" Value="0"></Setter>
+            <Setter Property="ListView.Foreground" Value="{StaticResource ContrastingGreenColor}"></Setter>
         </Style>
 
         <Style x:Key="RealElementListViewBorder">
@@ -51,6 +54,15 @@
             <Setter Property="Grid.Margin" Value="5"></Setter>
         </Style>
 
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource ContrastingGreenColor}"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+        
+        <Style x:Key="HeaderGrid">
+            <Setter Property="Grid.Width" Value="520"></Setter>
+        </Style>
+        
     </Page.Resources>
 
     <Grid Style="{StaticResource BackgroundColorWindow}">
@@ -75,8 +87,8 @@
 
                 </Grid>
 
-                <Grid>
-                    <TextBlock HorizontalAlignment="Left">Имя</TextBlock>
+                <Grid Style="{StaticResource HeaderGrid}">
+                    <TextBlock HorizontalAlignment="Left">ФИО</TextBlock>
                     <TextBlock HorizontalAlignment="Right">Номер читательского билета</TextBlock>
                 </Grid>
 
