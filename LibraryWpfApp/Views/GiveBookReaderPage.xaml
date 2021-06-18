@@ -9,6 +9,27 @@
       Title="GiveBookReaderPage">
     
     <Page.Resources>
+
+        <Style x:Key="RealSearchBookListView" BasedOn="{StaticResource BackgroundColor}">
+            <Setter Property="ListView.Width" Value="350"></Setter>
+            <Setter Property="ListView.Height" Value="430"></Setter>
+            <Setter Property="ListView.BorderThickness" Value="0"></Setter>
+            <Setter Property="ListView.Foreground" Value="{StaticResource ContrastingGreenColor}"></Setter>
+        </Style>
+
+        <Style x:Key="RealElementListViewBorder">
+            <Setter Property="Border.Background" Value="#2e3c4b"></Setter>
+            <Setter Property="Border.CornerRadius" Value="10"></Setter>
+            <Setter Property="Border.BorderThickness" Value="2"></Setter>
+            <Setter Property="Border.BorderBrush" Value="#1ea54c"></Setter>
+            <Setter Property="Border.Width" Value="300"></Setter>
+            <Setter Property="Border.Height" Value="200"></Setter>
+        </Style>
+
+        <Style x:Key="RealElementListViewGrid" BasedOn="{StaticResource BackgroundColorWindow}">
+            <Setter Property="Grid.Margin" Value="5"></Setter>
+        </Style>
+
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="{StaticResource ContrastingGreenColor}"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
@@ -35,15 +56,22 @@
 
                 </Grid>
 
-                <ListView x:Name="SearchBookListView" Style="{StaticResource BackgroundColorWindow}" Width="500">
+                <ListView x:Name="SearchBookListView" Style="{StaticResource RealSearchBookListView}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid x:Name="BookInfoGrid" MouseLeftButtonDown="BookInfoGrid_MouseLeftButtonDown" Style="{StaticResource BackgroundColorWindow}" Width="485" HorizontalAlignment="Center">
-                                <TextBlock x:Name="BookNameTextBlock" Text="{Binding name}" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
-                            </Grid>
+                            
+                            <Border Style="{StaticResource RealElementListViewBorder}">
+
+                                <Grid x:Name="BookInfoGrid" MouseLeftButtonDown="BookInfoGrid_MouseLeftButtonDown" Style="{StaticResource RealElementListViewGrid}">
+                                    <TextBlock x:Name="BookNameTextBlock" Text="{Binding name}"></TextBlock>
+                                </Grid>
+                                
+                            </Border>
+                            
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                
             </StackPanel>
             
         </Border>
