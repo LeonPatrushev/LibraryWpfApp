@@ -82,7 +82,7 @@
                         <DataTemplate>
 
                             <Border Style="{StaticResource RealReaderElementListViewBorder}">
-                                <Grid x:Name="ReadersInfoGrid" MouseLeftButtonDown="ReadersInfoGrid_MouseLeftButtonDown" Style="{StaticResource RealReaderElementListViewGrid}" HorizontalAlignment="Center">
+                                <Grid x:Name="ReadersInfoGrid" MouseLeftButtonDown="ReadersInfoGrid_MouseLeftButtonDown" Style="{StaticResource RealReaderElementListViewGrid}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition></ColumnDefinition>
                                         <ColumnDefinition></ColumnDefinition>
@@ -131,9 +131,9 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 
-                                <Border Style="{StaticResource RealElementListViewBorder}">
+                                <Border Style="{StaticResource RealElementListViewBorder}" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                                    <Grid Style="{StaticResource RealElementListViewGrid}" HorizontalAlignment="Center">
+                                    <Grid Style="{StaticResource RealElementListViewGrid}" VerticalAlignment="Center" HorizontalAlignment="Center">
                                         
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition></ColumnDefinition>

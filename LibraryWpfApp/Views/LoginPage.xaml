@@ -19,7 +19,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock x:Name="LoginTextBlock">Логин</TextBlock>
-                    <TextBox x:Name="LoginTextBox">admin@yandex.ru</TextBox>
+                    <TextBox x:Name="LoginTextBox">leonpatrushev@yandex.ru</TextBox>
                     <TextBlock x:Name="PassTextBlock">Пароль</TextBlock>
                     <TextBox x:Name="PassTextBox">pass</TextBox>
                 </StackPanel>

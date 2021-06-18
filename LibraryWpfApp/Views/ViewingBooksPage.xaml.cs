@@ -39,7 +39,7 @@ namespace LibraryWpfApp.Views
             arrayBooks = db.context.Books.ToList();
             SearchBookListView.ItemsSource = arrayBooks;
             PreviewBook.Visibility = Visibility.Hidden;
-            if (Properties.Settings.Default.idUsers == 0 || Properties.Settings.Default.idUsers == 3)
+            if (Properties.Settings.Default.idRoleUsers == 0 || Properties.Settings.Default.idRoleUsers == 3)
             {
                 ButtonsMenuBorder.Visibility = Visibility.Collapsed;
                 PreviewBookBorder.CornerRadius = new CornerRadius(10);
