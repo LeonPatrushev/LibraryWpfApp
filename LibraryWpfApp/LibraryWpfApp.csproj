@@ -71,7 +71,6 @@
     </ApplicationDefinition>
     <Compile Include="Classes\CreatingPassword.cs" />
     <Compile Include="Classes\FileReader.cs" />
-    <Compile Include="Controllers\BookbindingControllers.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\LibraryCardController.cs" />
     <Compile Include="Controllers\UsersController.cs" />

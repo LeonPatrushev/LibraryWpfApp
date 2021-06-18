@@ -116,7 +116,6 @@ namespace LibraryWpfApp.Views
         {
             selectButton = sender as Button;
             selectOrder = selectButton.DataContext as Orders;
-            Orders objectOrders = db.context.Orders.Where(x => x.id_book == selectOrder.id_book).First();
             Completed_orders objectCompletedOrders = new Completed_orders()
             {
                 id_book = db.context.Orders.Where(x => x.id_book == selectOrder.id_book).First().id_book,
@@ -129,7 +128,7 @@ namespace LibraryWpfApp.Views
                 MessageBoxResult result = MessageBox.Show("Подтвердить получение ?", "Подтвердить?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    db.context.Orders.Remove(objectOrders);
+                    db.context.Orders.Remove(selectOrder);
                     db.context.Completed_orders.Add(objectCompletedOrders);
                     db.context.Books.Where(x => x.id_book == selectOrder.id_book).First().id_status = 1;
                     db.context.SaveChanges();

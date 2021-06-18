@@ -22,6 +22,7 @@
                     <TextBox x:Name="EmailTextBox"></TextBox>
 
                     <TextBlock x:Name="TypeUserTextBlock" HorizontalAlignment="Center">Выберите тип доступа пользователя</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">Не выбирайте, если хотите добавить как читателя</TextBlock>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <RadioButton x:Name="LibrarianRadioButton">Библиотекарь</RadioButton>
                         <RadioButton x:Name="AdminRadioButton">Администратор</RadioButton>

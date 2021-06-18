@@ -10,6 +10,15 @@ namespace LibraryWpfApp.Controllers
     class LibraryCardController
     {
         Core db = new Core();
+        /// <summary>
+        /// Метод генерирующий код читательского билета.
+        /// </summary>
+        /// <param name="typeRidersTicket">
+        /// Тип читательского билета.
+        /// </param>
+        /// <returns>
+        /// Строку с кодом читательского билета.
+        /// </returns>
         public string GetCodeReadersTicket(string typeRidersTicket)
         {
             string codeReadersTicket = "";
@@ -41,6 +50,18 @@ namespace LibraryWpfApp.Controllers
             return codeReadersTicket;
         }
 
+        /// <summary>
+        /// Метод меняющий код читательского билета в зависимости от выбранного типа.
+        /// </summary>
+        /// <param name="typeRidersTicket">
+        /// Тип читательского билета.
+        /// </param>
+        /// <param name="codeReadersTicket">
+        /// Страка со старым кодом читательского билета.
+        /// </param>
+        /// <returns>
+        /// Страка с новым кодом читательского билета.
+        /// </returns>
         public string ChangeCodeReadersTicket(string typeRidersTicket, string codeReadersTicket)
         {
             string prefix = "";
@@ -65,6 +86,18 @@ namespace LibraryWpfApp.Controllers
             return codeReadersTicket;
         }
 
+        /// <summary>
+        /// Метод выдает читателей по ФИО/коду читательского билета.
+        /// </summary>
+        /// <param name="library_Cards">
+        /// Список с инормацией о читательских билетах.
+        /// </param>
+        /// <param name="searchLine">
+        /// Строка с данными поика.
+        /// </param>
+        /// <returns>
+        /// Список с информацией о читателе удовлетворяюий поиску.
+        /// </returns>
         public List<Library_card> SearchReader(List<Library_card> library_Cards, string searchLine)
         {
             List<Library_card> returnData = new List<Library_card>();

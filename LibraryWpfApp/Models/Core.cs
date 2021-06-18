@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LibraryWpfApp.Models
 {
+    /// <summary>
+    /// Подключение к LibraryDataBaseEntities.
+    /// </summary>
     public class Core
     {
         public LibraryDataBaseEntities context = new LibraryDataBaseEntities();

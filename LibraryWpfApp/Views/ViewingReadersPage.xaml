@@ -28,10 +28,13 @@
             <Setter Property="Grid.Margin" Value="5"></Setter>
         </Style>
 
+        <Style x:Key="RealReaderElementListViewTextBlock">
+            <Setter Property="TextBlock.Margin" Value="0 0 5 0"></Setter>
+        </Style>
         
         <Style x:Key="RealSearchBookListView" BasedOn="{StaticResource BackgroundColor}">
             <Setter Property="ListView.Width" Value="350"></Setter>
-            <Setter Property="ListView.Height" Value="350"></Setter>
+            <Setter Property="ListView.Height" Value="430"></Setter>
             <Setter Property="ListView.BorderThickness" Value="0"></Setter>
         </Style>
 
@@ -40,13 +43,14 @@
             <Setter Property="Border.CornerRadius" Value="10"></Setter>
             <Setter Property="Border.BorderThickness" Value="2"></Setter>
             <Setter Property="Border.BorderBrush" Value="#1ea54c"></Setter>
-            <Setter Property="Border.Width" Value="328"></Setter>
-            <Setter Property="Border.Height" Value="100"></Setter>
+            <Setter Property="Border.Width" Value="300"></Setter>
+            <Setter Property="Border.Height" Value="200"></Setter>
         </Style>
 
         <Style x:Key="RealElementListViewGrid" BasedOn="{StaticResource BackgroundColorWindow}">
             <Setter Property="Grid.Margin" Value="5"></Setter>
         </Style>
+
     </Page.Resources>
 
     <Grid Style="{StaticResource BackgroundColorWindow}">
@@ -88,12 +92,13 @@
                                         <ColumnDefinition></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
-                                        <TextBlock x:Name="ReadersNameTextBlock" Text="{Binding name}"></TextBlock>
-                                        <TextBlock x:Name="ReadersSurnameTextBlock" Text="{Binding surname}"></TextBlock>
-                                        <TextBlock x:Name="ReadersPatronymicTextBlock" Text="{Binding patronymic}"></TextBlock>
+                                        <TextBlock x:Name="ReadersNameTextBlock" Text="{Binding name}" Style="{StaticResource RealReaderElementListViewTextBlock}"></TextBlock>
+                                        <TextBlock x:Name="ReadersSurnameTextBlock" Text="{Binding surname}" Style="{StaticResource RealReaderElementListViewTextBlock}"></TextBlock>
+                                        <TextBlock x:Name="ReadersPatronymicTextBlock" Text="{Binding patronymic}" Style="{StaticResource RealReaderElementListViewTextBlock}"></TextBlock>
                                     </StackPanel>
 
                                     <TextBlock x:Name="ReadersCodeLibraryCardTextBlock" Text="{Binding code_library_card}" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="1"></TextBlock>
+                                    
                                 </Grid>
                             </Border>
 
@@ -120,10 +125,10 @@
                 <StackPanel x:Name="PreviewReaders" Orientation="Vertical" Style="{StaticResource ClassicMarginStackPanel}">
                     
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        
-                        <TextBlock x:Name="SurnameReadersTextBlock" HorizontalAlignment="Center" Margin="5"></TextBlock>
-                        <TextBlock x:Name="NameReadersTextBlock" HorizontalAlignment="Center" Margin="5"></TextBlock>
-                        <TextBlock x:Name="PatronymicReadersTextBlock" HorizontalAlignment="Center" Margin="5"></TextBlock>
+
+                        <TextBlock x:Name="SurnameReadersTextBlock" HorizontalAlignment="Center" Style="{StaticResource RealReaderElementListViewTextBlock}"></TextBlock>
+                        <TextBlock x:Name="NameReadersTextBlock" HorizontalAlignment="Center" Style="{StaticResource RealReaderElementListViewTextBlock}"></TextBlock>
+                        <TextBlock x:Name="PatronymicReadersTextBlock" HorizontalAlignment="Center" Style="{StaticResource RealReaderElementListViewTextBlock}"></TextBlock>
                         
                     </StackPanel>
 
@@ -155,6 +160,7 @@
                                             <TextBlock>Дата конца аренды книги:</TextBlock>
                                             <TextBlock Text="{Binding return_date, StringFormat={}{0:dd MMM yyyy}}"></TextBlock>
                                         </StackPanel>
+                                        
                                         <Button x:Name="ConfirmRefundButton" Grid.Row="1" Grid.ColumnSpan="2" Click="ConfirmRefundButton_Click">Подтвердить возврат</Button>
                                         
                                     </Grid>

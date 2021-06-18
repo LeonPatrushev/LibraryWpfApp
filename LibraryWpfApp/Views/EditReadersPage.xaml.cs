@@ -24,6 +24,10 @@ namespace LibraryWpfApp.Views
     {
         int idLibraryCard;
         Core db;
+        Library_card objectLibrary_Card;
+        Users objectUsers;
+        Orders objectOrders;
+        Completed_orders objectCompletedOrders;
         /// <summary>
         /// Страница редактирования данных о читателе.
         /// </summary>
@@ -68,16 +72,28 @@ namespace LibraryWpfApp.Views
         /// </summary>
         private void DelReadersTicketButton_Click(object sender, RoutedEventArgs e)
         {
-            Library_card objectLibrary_Card = db.context.Library_card.Where(x => x.id_library_card == idLibraryCard).First();
-            Users objectUsers = db.context.Users.Where(x => x.id_library_card == idLibraryCard).First();
-            Orders objectOrders = db.context.Orders.Where(x => x.id_library_card == idLibraryCard).First();
-            Completed_orders objectCompletedOrders = db.context.Completed_orders.Where(x => x.id_library_card == idLibraryCard).First();
+            objectLibrary_Card = db.context.Library_card.Where(x => x.id_library_card == idLibraryCard).First();
+            objectUsers = db.context.Users.Where(x => x.id_library_card == idLibraryCard).First();
+            if(db.context.Orders.Where(x => x.id_library_card == idLibraryCard).Count() != 0)
+            {
+                objectOrders = db.context.Orders.Where(x => x.id_library_card == idLibraryCard).First();
+            }
+            if(db.context.Completed_orders.Where(x => x.id_library_card == idLibraryCard).Count() != 0)
+            {
+                objectCompletedOrders = db.context.Completed_orders.Where(x => x.id_library_card == idLibraryCard).First();
+            }
 
             MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите удалить пользователя?", "Удалить?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
-                db.context.Orders.Remove(objectOrders);
-                db.context.Completed_orders.Remove(objectCompletedOrders);
+                if (db.context.Orders.Where(x => x.id_library_card == idLibraryCard).Count() != 0)
+                {
+                    db.context.Orders.Remove(objectOrders);
+                }
+                if (db.context.Completed_orders.Where(x => x.id_library_card == idLibraryCard).Count() != 0)
+                {
+                    db.context.Completed_orders.Remove(objectCompletedOrders);
+                }
                 db.context.Users.Remove(objectUsers);
                 db.context.Library_card.Remove(objectLibrary_Card);
                 db.context.SaveChanges();

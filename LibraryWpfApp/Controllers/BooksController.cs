@@ -20,7 +20,7 @@ namespace LibraryWpfApp.Controllers
         /// Строка с данными поика.
         /// </param>
         /// <returns>
-        /// Список с информацией о книге удовлетворяющей поиску.
+        /// Список с информацией о книге удовлетворяющий поиску.
         /// </returns>
         public List<Books> SearchBook(List<Books> arrayBooks, string searchLine)
         {
