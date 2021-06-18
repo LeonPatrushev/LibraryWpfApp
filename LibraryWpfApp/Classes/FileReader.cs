@@ -24,7 +24,7 @@ namespace LibraryWpfApp.Classes
             returnData.Add("Неизвестно");
 
             string folderPath = Directory.GetCurrentDirectory();
-            folderPath = folderPath.Replace("\\bin\\Debug", "\\Resources\\Documents\\");
+            folderPath = folderPath.Replace("\\bin\\Debug", "\\Resources\\");
             using (StreamReader reader = new StreamReader(folderPath + fileNameCSV))
             {
                 string line;

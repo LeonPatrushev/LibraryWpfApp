@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputDataLibrary", "InputDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputDataTests", "InputDataTests\InputDataTests.csproj", "{4745FC43-EE8F-43E4-99DA-4AC8E1FF7DDA}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LibraryAppSetup", "LibraryAppSetup\LibraryAppSetup.vdproj", "{2AEE2C21-AFD6-4C2C-BEA6-396AC5E14063}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{4745FC43-EE8F-43E4-99DA-4AC8E1FF7DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4745FC43-EE8F-43E4-99DA-4AC8E1FF7DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4745FC43-EE8F-43E4-99DA-4AC8E1FF7DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AEE2C21-AFD6-4C2C-BEA6-396AC5E14063}.Debug|Any CPU.ActiveCfg = Debug
+		{2AEE2C21-AFD6-4C2C-BEA6-396AC5E14063}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

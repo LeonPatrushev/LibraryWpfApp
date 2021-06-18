@@ -283,10 +283,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Resources\Documents\BBK.csv" />
-    <None Include="Resources\Documents\Genre.csv" />
-    <None Include="Resources\Documents\ISBNRegGroups.csv" />
-    <None Include="Resources\Documents\Languages.csv" />
+    <None Include="Resources\BBK.csv" />
+    <None Include="Resources\Genre.csv" />
+    <None Include="Resources\ISBNRegGroups.csv" />
+    <None Include="Resources\Languages.csv" />
     <Resource Include="Resources\Fonts\AireExterior.ttf" />
   </ItemGroup>
   <ItemGroup>
