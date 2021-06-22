@@ -82,7 +82,7 @@ namespace InputDataLibrary
             string countryName;
 
             string folderPath = Directory.GetCurrentDirectory();
-            folderPath = folderPath.Replace("\\bin\\Debug", "\\Resources\\Documents\\");
+            folderPath = folderPath.Replace("\\bin\\Debug", "\\Resources\\");
             using (StreamReader reader = new StreamReader(folderPath+"ISBNRegGroups.csv"))
             {
                 string line;

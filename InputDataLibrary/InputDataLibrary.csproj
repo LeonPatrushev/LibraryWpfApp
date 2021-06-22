@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckEmail.cs" />
+    <Compile Include="CheckEmptyString.cs" />
     <Compile Include="CheckISBN.cs" />
+    <Compile Include="CheckNumberPhone.cs" />
     <Compile Include="CheckReaderTicket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

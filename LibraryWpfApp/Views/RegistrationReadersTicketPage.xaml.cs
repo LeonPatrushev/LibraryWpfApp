@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LibraryWpfApp.Models;
 using LibraryWpfApp.Controllers;
+using InputDataLibrary;
 
 namespace LibraryWpfApp.Views
 {
@@ -23,12 +24,14 @@ namespace LibraryWpfApp.Views
     public partial class RegistrationReadersTicketPage : Page
     {
         Core db = new Core();
+        CheckNumberPhone objectCheckNumberPhone;
         /// <summary>
         /// Страница создания нового читательского билета.
         /// </summary>
         public RegistrationReadersTicketPage()
         {
             InitializeComponent();
+            objectCheckNumberPhone = new CheckNumberPhone();
         }
 
         /// <summary>
@@ -36,7 +39,11 @@ namespace LibraryWpfApp.Views
         /// </summary>
         private void CreatingReadersTicketButton_Click(object sender, RoutedEventArgs e)
         {
-            if(TypeReadersTicketComboBox.Text == String.Empty)
+            if(objectCheckNumberPhone.CheckFullNumberPhone(TelephoneTextBox.Text) == false)
+            {
+                MessageBox.Show("Неправильный формат номера телефона");
+            }
+            else if(TypeReadersTicketComboBox.Text == String.Empty)
             {
                 MessageBox.Show("Выберите тип читательского билета");
             }

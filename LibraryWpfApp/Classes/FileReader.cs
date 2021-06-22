@@ -15,7 +15,9 @@ namespace LibraryWpfApp.Classes
         /// <param name="fileNameCSV">
         /// Название файла.
         /// </param>
-        /// <returns></returns>
+        /// <returns>
+        /// Возвращает данные прочитанные из csv-файла.
+        /// </returns>
         public List<string> CSVReader(string fileNameCSV, string defaultData)
         {
             List<string> returnData = new List<string>();

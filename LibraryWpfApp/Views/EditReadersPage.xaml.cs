@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LibraryWpfApp.Models;
 using LibraryWpfApp.Controllers;
+using InputDataLibrary;
 
 namespace LibraryWpfApp.Views
 {
@@ -28,6 +29,7 @@ namespace LibraryWpfApp.Views
         Users objectUsers;
         Orders objectOrders;
         Completed_orders objectCompletedOrders;
+        CheckNumberPhone objectCheckNumberPhone;
         /// <summary>
         /// Страница редактирования данных о читателе.
         /// </summary>
@@ -38,6 +40,7 @@ namespace LibraryWpfApp.Views
         {
             InitializeComponent();
             db = new Core();
+            objectCheckNumberPhone = new CheckNumberPhone();
             idLibraryCard = idReader;
            
             this.DataContext=db.context.Library_card.Where(x => x.id_library_card == idLibraryCard).ToList();
@@ -61,11 +64,18 @@ namespace LibraryWpfApp.Views
         /// </summary>
         private void EditReadersTicketButton_Click(object sender, RoutedEventArgs e)
         {
-            string codeLibraryCard = db.context.Library_card.Where(x => x.id_library_card == idLibraryCard).First().code_library_card;
-            LibraryCardController objectLibraryCardController = new LibraryCardController();
-            db.context.Library_card.Where(x =>x.id_library_card == idLibraryCard).First().code_library_card = objectLibraryCardController.ChangeCodeReadersTicket(TypeReadersTicketComboBox.Text, codeLibraryCard);
-            db.context.SaveChanges();
-            this.NavigationService.Navigate(new ViewingReadersPage());
+            if(objectCheckNumberPhone.CheckFullNumberPhone(TelephoneTextBox.Text) == true)
+            {
+                string codeLibraryCard = db.context.Library_card.Where(x => x.id_library_card == idLibraryCard).First().code_library_card;
+                LibraryCardController objectLibraryCardController = new LibraryCardController();
+                db.context.Library_card.Where(x => x.id_library_card == idLibraryCard).First().code_library_card = objectLibraryCardController.ChangeCodeReadersTicket(TypeReadersTicketComboBox.Text, codeLibraryCard);
+                db.context.SaveChanges();
+                this.NavigationService.Navigate(new ViewingReadersPage());
+            }
+            else
+            {
+                MessageBox.Show("Неправильный формат номера телефона");
+            }
         }
 
         /// <summary>

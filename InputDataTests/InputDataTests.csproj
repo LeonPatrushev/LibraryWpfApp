@@ -58,10 +58,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="CheckEmailTests.cs" />
+    <Compile Include="CheckNumberPhoneTests.cs" />
+    <Compile Include="CheckEmptyStringTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\Documents\ISBNRegGroups.csv" />
+    <None Include="Resources\ISBNRegGroups.csv" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InputDataLibrary\InputDataLibrary.csproj">

@@ -10,7 +10,7 @@ namespace InputDataLibrary
     public class CheckEmail
     {
         /// <summary>
-        /// 
+        /// Метод проверяющий строку с Email на корректность.
         /// </summary>
         /// <param name="email">
         /// Строка с Email.
